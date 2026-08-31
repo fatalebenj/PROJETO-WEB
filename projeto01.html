@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festival de Música</title>
+    <style>
+        /* aqui vai o css */
+        /* cores claro vermelho coral ef6461 vinho 4b2e39 mostarda e4b363 branco e8e9eb creme e0dfd5 */
+        /* cores escuro creme EFE7DA laranja E55812 verde limao 95C623 musgo 0E4749 escuro 002626 */
+
+        body.claro { /* para toda a página */
+            background-color: #e0dfd5;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        body a { /* para todos os links da pagina */
+            text-decoration: none; /* tira o sublinhado dos links */
+        }
+        
+        /* cabecalho*/
+        #cabecalho { /* serve para t1odos o cabeçalho e sua área */
+            display:flex; /* coloca os elementos do cabecalho lado a lado */
+            background-color: #ef6461;
+            padding:5px;
+        }
+        #cabecalho * { /* atribuir individualmente para cada elemento dentro do cabecalho*/
+            margin: 0;
+            color: #e8e9eb;
+        }
+        #cabecalho p { /* para todos os parágrafos dentro de cabecalho */
+            margin-top: 15px;
+            margin-left: 10px;
+            color: #e0dfd5;
+        }
+        #cabecalho nav { /* para todos os nav dentro de cabecalho */
+            margin-left:100px;
+            margin-top: 10px;
+        }
+        #cabecalho nav a { /* para todos os links dentro dos nav dentro de cabecalho */
+            font-weight: bold;
+            font-size: 14pt;
+            margin-right: 18px;
+        }
+
+        #cabecalho nav a:hover {
+            color: #e4b363;
+        }
+
+        /* seçao do line-up */
+        #lineup {
+            display:flex;
+            margin-top:50px;
+            margin-right: auto;
+            margin-left: auto;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .card {
+            background-color: #ef6461;
+            height: 450px;
+            width: 300px;
+            margin-left:30px;
+            border-radius: 3%;
+            text-align: center;
+            color:#e8e9eb;
+        }
+
+        /* secao do formulario*/
+        section#contato {
+            margin-top: 40px;
+            background-color: #4b2e39;
+            color:#e8e9eb;
+            width: 700px;
+            margin-right: auto;
+            margin-left: auto;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            border-radius: 3%;
+            padding: 10px;
+        }
+
+        section#contato * {
+            margin-bottom: 5px;
+        }
+
+        /* secao do sobre*/
+         section#sobre {
+            margin-top: 40px;
+            background-color: #e4b363;
+            color:#e8e9eb;
+            width: 700px;
+            margin-right: auto;
+            margin-left: auto;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            border-radius: 3%;
+            padding: 10px;
+        }
+
+        section#sobre p {
+            color: #4b2e39;
+        }
+
+
+        #rodape {
+            width: 100%;
+            max-width: 1912px;
+            min-height: 60px;
+            background: #ef6461;
+            margin: 0 auto 24px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            padding: 10px 0;
+}
+    </style>
+    <script>
+        /*javascript aqui */
+
+        let temaAtual = "claro";
+
+        function enviarmensagem() {
+            let nome = document.querySelector("#client").value;
+            let mensagem =  document.querySelector("#client-message").value;
+            document.querySelector("#mensagem").innerHTML = "Olá, " + nome + '. Sua mensagem é:  "' + mensagem + '".';
+        }
+
+        function exibirhorario() {
+            let horario_visivel = document.querySelector("#horario").style;
+            horario_visivel.display == "none" ? horario_visivel.display = "block" : horario_visivel.display = "none";
+        }
+
+        function mudarTema(){
+            let buttones = document.querySelector("#botaoTema");
+            if (temaAtual == "claro") {
+                buttones.innerText = "Troque para o tema claro"
+                temaAtual = "escuro"
+                document.body.style.backgroundColor = "#0E4749";
+                document.querySelectorAll(".coral").forEach(el => {
+                    el.style.backgroundColor = "#002626";
+                });
+                document.querySelectorAll(".card").forEach(el =>{
+                    el.style.backgroundColor = "#95C623";
+                    el.style.color = "#002626";
+                })
+                document.querySelector("#contato").style.backgroundColor = "#002626" ;
+                document.querySelector("#contato").style.color = "#EFE7DA";
+                document.querySelector("#sobre").style.backgroundColor = "#002626" ;
+                document.querySelector("#sobre p").style.color = "#EFE7DA";
+            } else {
+                buttones.innerText = "Troque para o tema escuro"
+                temaAtual = "claro"
+                document.body.style.backgroundColor = "#e0dfd5";
+                document.querySelectorAll(".coral").forEach(el => {
+                    el.style.backgroundColor = "#ef6461";
+                    el.style.color = "#e8e9eb";
+                })
+                document.querySelector("#contato").style.backgroundColor = "#4b2e39" ;
+                document.querySelector("#contato").style.color = "#e8e9eb";
+                document.querySelector("#sobre").style.backgroundColor = "#e4b363" ;
+                document.querySelector("#sobre p").style.color = "#e8e9eb";
+            }
+
+        }
+    </script>
+
+</head>
+<body class="claro">
+    <header id="cabecalho" class="coral">
+        <!-- No cabeçalho do site teremos
+        h1: nome do negócio/serviço/evento
+        p: breve descrição
+         nav: links das seções da própria página  -->
+        <h1><a href="projeto01.html">Festival da Gruta 2042</a></h1>
+        <p>Venha para o MELHOR festival de arrocha do interior da Bahia nos dias 6 e 7 de onzembro !</p>
+        <nav>
+            <a href="#lineup">Programação & Ingressos</a>
+            <a href="#contato">Contato</a>
+            <a href="#sobre">Nossa História</a>
+        </nav>
+    </header>
+    <section id="lineup">
+        <!--
+        nesta seção teremos 3 destaques (cards), com uma imagem de cada.
+        h2: nome da seção de destaques
+        h3: nome de cada destaque
+        p: descriçao curta de cada destaque.
+        -->
+        <div class="card coral" id="dia1">
+            <h3>DIA 06/13</h3>
+            <h3 style="margin-bottom: 54px;">Devinho Novaes</h3>
+            <img src="assets/deivinho.png" width="300">
+            
+        </div>
+        <div class="card coral" id="dia2">
+            <h3>DIA 07/13</h3>
+            <h3 style="margin-bottom: 36px;">Filomena Bagaceira</h3>
+            <img src="assets/filomena_bagceira.png" width="230">
+        </div>
+        <div class="card coral" id="ingressos">  
+            <h3>Ingressos</h3>
+            <p>Inteira: R$1.000.000.000,00</p>
+            <p>Meia-Entrada: R$500.000.000,00</p>
+    </div>
+      
+    </section>
+    <section id="contato">
+        <!--
+        nesta seção teremos um formulário para contato com os campos "nome" e "mensagem".
+        além disso, teremos um botão "enviar" que, ao ser clicado, mostrará na tela o resumo:
+        "Olá,'nome'! recebemos sua mensagem: 'mensagem' "
+        -->
+        <form>
+                <h2>Mande-nos uma Mensagem!</h2>
+                <label>Seu nome: <input type="text" id="client"/></label> <br>
+                <label>Sua mensagem: <textarea id="client-message"></textarea></label>
+        </form>
+        <button id="enviarmensagem" onclick="enviarmensagem()">Enviar</button>
+        <p id="mensagem"></p>
+    </section>
+    <section id="sobre">
+        <!--
+        h2: "Sobre nós" (ou outro nome)
+        p: breve histórico do negócio. além disso um botão "ver horário
+        de funcionamento" que, ao ser clicado, exibirá na teça os dias/horários disponíveis
+        -->
+        <h2 style="margin-top: 5px;"> Sobre Nós</h2>
+        <p>O Festival da Gruta é o encontro definitivo do arrocha, criado para ecoar o som que faz o coração bater mais
+             forte e os pés dançarem colados. Nascido da paixão pela sofrência e pelo ritmo contagiante que domina o Brasil,
+              nosso palco é o refúgio onde a emoção não tem filtro e a energia não tem fim.</p>
+        <p id="horario" style="display: none;">Seg a Sex: 8h a 16h</p>
+        <button onclick="exibirhorario()">Exibir Horário</button>
+    </section>
+    <footer id="rodape" class="coral">
+        <!--
+        No rodapé teremos um botão mudar tema
+        para alternar entre tema claro e escuro
+        -->
+        <button onclick="mudarTema();" id="botaoTema">Troque para o tema escuro</button>
+    </footer>
+</body>
+</html>

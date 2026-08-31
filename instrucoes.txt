@@ -1,0 +1,20 @@
+Projeto 01
+construir um site com html, css e javascript.
+
+o site será a apresentação de um  negócio/servoço
+
+a estrutura do site vai ser EXATAMENTE aquela que vamos construir em sala de aula.
+
+o site deve executar 3 functiond especificas
+
+1: exibir texto oculto ao clicar no botao, ao clicar novamente vai esconder o texto;
+2: exibir na tela o texto que o user inserir no form de contato;
+3: mudar a aparencia do site(terma claro/escuro) a partir do clique de um botao.
+
+o trabalho vai servir de preparacao para a prova, por isso: comentem o code;
+
+tema: MUSIC FESTIVAL
+
+santedicolaa@gmail.com
+Assunto: Projeto 01 WEB2 422
+Mensagem: Benjamin e Joao Pedro
