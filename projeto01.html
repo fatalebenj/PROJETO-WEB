@@ -139,23 +139,23 @@
         /*funcao para mudar o tema de claro para escuro e vice-versa*/
         function mudarTema(){
             let buttones = document.querySelector("#botaoTema");
-            if (temaAtual == "claro") { /*se o tema atual for claro*/
-                buttones.innerText = "Troque para o tema claro"
-                temaAtual = "escuro"
+            if (temaAtual == "claro") { /*se o tema atual estiver claro*/
+                buttones.innerText = "Troque para o tema claro" /*troca o botao*/
+                temaAtual = "escuro"  /*troca a variavel determinante*/
                 document.body.style.backgroundColor = "#0E4749";
-                document.querySelectorAll(".coral").forEach(el => {
+                document.querySelectorAll(".coral").forEach(el => { /*troca a cor de todos os elementos da classe coral*/
                     el.style.backgroundColor = "#002626";
                 });
-                document.querySelectorAll(".card").forEach(el =>{
+                document.querySelectorAll(".card").forEach(el =>{ /*troca a cor de todos os elementos da classe card*/
                     el.style.backgroundColor = "#95C623";
                     el.style.color = "#002626";
                 })
-                document.querySelector("#contato").style.backgroundColor = "#002626" ;
-                document.querySelector("#contato").style.color = "#EFE7DA";
+                document.querySelector("#contato").style.backgroundColor = "#002626" ; /*troca a cor da fundo de determinado elemento*/
+                document.querySelector("#contato").style.color = "#EFE7DA"; /*troca a cor da fonte de determinado elemento*/
                 document.querySelector("#sobre").style.backgroundColor = "#002626" ;
                 document.querySelector("#sobre p").style.color = "#EFE7DA";
                 document.querySelector("#sobre #horario").style.color = "#EFE7DA";
-            } else {
+            } else { /*se o tema atual estiver escuro*/
                 buttones.innerText = "Troque para o tema escuro"
                 temaAtual = "claro"
                 document.body.style.backgroundColor = "#e0dfd5";
@@ -179,10 +179,10 @@
         <!-- No cabeçalho do site teremos
         h1: nome do negócio/serviço/evento
         p: breve descrição
-         nav: links das seções da própria página  -->
+        nav: links das seções da própria página  -->
         <h1><a href="projeto01.html">Festival da Gruta 2042</a></h1>
         <p>Venha para o MELHOR festival de arrocha do interior da Bahia nos dias 6 e 7 de onzembro !</p>
-        <nav>
+        <nav> 
             <a href="#lineup">Programação & Ingressos</a>
             <a href="#contato">Contato</a>
             <a href="#sobre">Nossa História</a>
@@ -195,7 +195,7 @@
         h3: nome de cada destaque
         p: descriçao curta de cada destaque.
         -->
-        <div class="card coral" id="dia1">
+        <div class="card coral" id="dia1"> 
             <h3>DIA 06/13</h3>
             <h3 style="margin-bottom: 54px;">Devinho Novaes</h3>
             <img src="assets/deivinho.png" width="300">
